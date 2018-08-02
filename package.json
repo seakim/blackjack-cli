@@ -1,0 +1,20 @@
+{
+  "name": "blackjack-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seakim/blackjack-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seakim/blackjack-cli/issues"
+  },
+  "homepage": "https://github.com/seakim/blackjack-cli#readme"
+}
