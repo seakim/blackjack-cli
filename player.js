@@ -1,42 +1,49 @@
 /**
  * 
  */
+'use strict';
 
-var Table = function () {
-    this.dealer = {
+var Player = function (name, budget) {
+    this.name = name;
+    this.budget = budget;
+    this.betAmount = 0;
+    this.handArea = [];
+    this.handValue = 0;
+    this.status = null;
+}
+
+var playerSetup = (function () {
+    var dealer = {
         name: "dealer",
         handArea: [],
         handValue: 0,
+        status: null
     };
-    this.players = [];
-    this.recipients = [];
-    this.addPlayer = function (name, budget) {
+    var players = [];
+
+    var addPlayer = function (name, budget) {
         var newPlayer = new Player(name,budget);
-        this.players.push(newPlayer);
-        this.recipients.push(newPlayer);
+        players.push(newPlayer);
     }
-    this.removePlayer = function (name) {
-        for (var i = 0; i < this.players.length; i++) {
+    var removePlayer = function (name) {
+        for (var i = 0; i < players.length; i++) {
             if (name === this.players[i].name) {
                 this.players.splice(i, 1);
             }
         }
     }
-    this.recipients.push(this.dealer);
-}
+    return {
+        players: players,
+        dealer: dealer,
+        addPlayer: addPlayer,
+        removePlayer: removePlayer
+    }
+})();
 
-var Player = function (name, budget) {
-    this.name = name;
-    this.budget = budget;
-    this.bet = 0;
-    this.handArea = [];
-    this.handValue = 0;
-}
+// playerSetup.addPlayer("Sean",1000);
+// playerSetup.addPlayer("James",1000);
+// playerSetup.removePlayer("Sean");
+// console.log(playerSetup.players);
+// console.log(playerSetup.dealer);
 
-// var table = new Table();
-// table.addPlayer("Sean",1000);
-// table.addPlayer("James",1000);
-// // table.removePlayer("sean");
-// console.log(table);
-
-module.exports = Table;
+module.exports = playerSetup;
