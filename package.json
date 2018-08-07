@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/seakim/blackjack-cli/issues"
   },
-  "homepage": "https://github.com/seakim/blackjack-cli#readme"
+  "homepage": "https://github.com/seakim/blackjack-cli#readme",
+  "dependencies": {
+    "inquirer": "^6.0.0"
+  }
 }
